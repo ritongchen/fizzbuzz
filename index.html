@@ -25,10 +25,12 @@
 
 <div class="container">
 
-    <h1>Hello World!</h1>
-    <p class="lead">This is something!</p>
-
+Please Enter a number:<br>
+<input type="text" name="number" id="number">
+<button onclick="displayNumbers()">Click me to show all</button>
+<div id="result"/>
 </div><!-- /.container -->
+
 
 
 <!-- Bootstrap core JavaScript
@@ -36,5 +38,42 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+function displayNumbers(){
+
+	 var N= $('#number').val();
+	 $('#result').html('');
+	 display(N);
+
+}
+
+function display(N){
+   
+	
+	for(i=1;i<=N;i++){
+	    if(i%15==0){
+		    $('#result').html($('#result').html()+'<br>'+i+' FizzBuzz');
+		}
+		else{
+
+			if(i%3==0){			
+				$('#result').html($('#result').html()+'<br>'+i+' Fizz'); 
+			}
+			else if(i%5==0){
+				$('#result').html($('#result').html()+'<br>'+i+' Buzz');
+			}
+			else
+			$('#result').html($('#result').html()+'<br>'+i);
+		}
+		
+			
+			
+
+	}
+
+
+}
+</script>
 </body>
 </html>
